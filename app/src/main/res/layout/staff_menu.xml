@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/staff_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="50dp">
+
+    <Button
+        android:id="@+id/cost_est_bt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/logs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/track_package_bt" />
+
+    <Button
+        android:id="@+id/track_package_bt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/create_username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/status_button"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/report_package_status"
+        app:layout_constraintBottom_toTopOf="@+id/track_package_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:clickable="false"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/customer_feedback_bt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/change_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cost_est_bt" />
+
+    <Button
+        android:id="@+id/reply_button"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/reply_to_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        android:clickable="false"
+        app:layout_constraintTop_toBottomOf="@+id/customer_feedback_bt" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reply_button" />
+
+    <Button
+        android:id="@+id/book_button"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/book_a_courier"
+        app:iconPadding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/status_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/menu_headder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="@string/menu"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/book_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/disp_staff_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/staff_id"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/book_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_headder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_above="@id/userName"
+        android:text="@string/staff_login"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/loginText"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/user_name"
+        android:id="@+id/userName"
+        android:layout_centerInParent="true"
+        android:maxLength="15"
+        android:textSize="25sp"
+        android:inputType="text"
+        android:elevation="20dp"
+        android:importantForAutofill="no" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_below="@id/userName"
+        android:id="@+id/password"
+        android:maxLength="25"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:importantForAutofill="no"
+        android:elevation="15dp"/>
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/submit"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:elevation="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/track_submit_bt"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/track_submit_bt"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="@string/back"/>
+</com.google.android.material.circularreveal.CircularRevealRelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/track_init">
+
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/package_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/track_package"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/package_id"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="20dp"
+        android:hint="@string/package_id"
+        android:inputType="text"
+        android:maxLength="15"
+        android:textSize="25sp"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/track_submit_bt"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/package_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:elevation="20dp"
+        android:text="@string/submit"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/track_init_back_bt"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/track_submit_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp"
+        android:text="@string/back"
+        android:textSize="20sp" />
+
+</com.google.android.material.circularreveal.CircularRevealRelativeLayout>

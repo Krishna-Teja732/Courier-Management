@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="15dp"
+    tools:ignore="RtlSymmetry"
+    android:id="@+id/book_courier_layout"
+    android:paddingTop="10dp"
+    >
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/book_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="@string/back"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/book_courier"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/text7"
+        />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text7"
+        android:layout_marginTop="30dp"
+        android:id="@+id/scrollView"
+        tools:ignore="ScrollViewCount">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/courier_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/senderDetails"
+                android:text=""
+                android:textSize="20sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/senderDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/courier_id"
+                android:elevation="20dp"
+                app:cardCornerRadius="5dp">
+
+                <com.google.android.material.circularreveal.CircularRevealLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sender_s_address"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/enter_sender_name"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="15dp"
+                        android:hint="@string/name"
+                        android:id="@+id/sender_name"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/address_line_1"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:elevation="15dp"
+                        android:id="@+id/sender_address"
+                        android:hint="@string/address_line_1"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/postal_code"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="34dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/phone_number"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/sender_postal_code"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:autofillHints="@array/postal_code"
+                            android:elevation="15dp"
+                            android:hint="@string/select"
+                            android:inputType="number"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/sender_phone_number"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:elevation="15dp"
+                            android:hint="@string/phone_number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/receiverDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/senderDetails"
+                android:layout_marginTop="40dp"
+                android:elevation="20dp"
+                app:cardCornerRadius="5dp">
+
+                <com.google.android.material.circularreveal.CircularRevealLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/receiver_address"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/receiver_name"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/receiver_name"
+                        android:elevation="15dp"
+                        android:hint="@string/name"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/address_line_1"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:elevation="15dp"
+                        android:hint="@string/address_line_1"
+                        android:id="@+id/receiver_address"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textSize="20sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/postal_code"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="34dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/phone_number"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/receiver_postal_code"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:autofillHints="@array/postal_code"
+                            android:elevation="15dp"
+                            android:hint="@string/select"
+                            android:inputType="number"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/receiver_phone_number"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:elevation="15dp"
+                            android:hint="@string/phone_number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/courier_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/receiverDetails">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/amount"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="171dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/package_weight"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:elevation="15dp"
+                        android:hint="@string/amount"
+                        android:importantForAutofill="no"
+                        android:id="@+id/amount"
+                        android:inputType="numberDecimal"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="170dp"
+                        android:layout_marginTop="45dp"
+                        android:elevation="15dp"
+                        android:hint="@string/weight_in_grams"
+                        android:importantForAutofill="no"
+                        android:id="@+id/weight"
+                        android:inputType="numberDecimal"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/courier_details"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/book_courier_submit_bt"
+                android:layout_marginTop="20dp"
+                android:text="@string/book"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="311dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

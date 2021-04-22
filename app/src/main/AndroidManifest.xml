@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.couriermanagement.ui">
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CourierManagement">
+        <activity android:name=".TrackPackage"/>
+        <activity android:name=".Logs"/>
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".CreateEmp" />
+        <activity android:name=".CustomerMenu" />
+        <activity android:name=".EmployeeLogin" />
+        <activity android:name=".EmployeeMenu" />
+        <activity android:name=".BookCourier" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

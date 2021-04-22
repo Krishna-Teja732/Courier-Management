@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">courier management</string>
+    <string name="password">Password</string>
+    <string name="user_name">User name</string>
+    <string name="submit">Submit</string>
+    <string name="staff_login">Staff Login</string>
+    <string name="track_package">Track package</string>
+    <string name="package_id">Package ID</string>
+    <string name="sender_s_address">Sender address</string>
+    <string name="select">select</string>
+    <string name="postal_code">Postal code</string>
+    <string name="address_line_1">Address</string>
+    <string name="courier_id_xx0001">Courier id: xx0001</string>
+    <string name="enter_sender_name">Enter Sender name</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="receiver_address">Receiver address</string>
+    <string name="receiver_name">Receiver name</string>
+    <string name="amount">Amount</string>
+    <string name="package_weight">Package weight</string>
+    <string name="weight_in_grams" translatable="false">Weight in grams</string>
+    <string name="book" translatable="false">Book</string>
+    <string name="logs">logs</string>
+    <string name="create_username">create username</string>
+    <string name="report_package_status">Report package status</string>
+    <string name="change_password">change password</string>
+    <string name="reply_to_feedback">reply to feedback</string>
+    <string name="logout">logout</string>
+    <string name="book_a_courier">Book a courier</string>
+    <string name="menu">MENU</string>
+    <string name="staff_id">Staff id:</string>
+    <string name="cost_estimate">Cost estimate</string>
+    <string name="feedback">feedback</string>
+    <string name="back">Back</string>
+    <string name="courier_management">Courier management</string>
+    <string name="customer">Customer</string>
+    <string name="employee">Employee</string>
+    <string name="create_employee">CREATE EMPLOYEE</string>
+    <string name="employee_name">Employee Name</string>
+    <string name="rank">Rank</string>
+    <string name="salary">Salary</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="enter_current_password">enter current password</string>
+    <string name="book_courier">BOOK COURIER</string>
+    <string name="no_data_found">NO DATA FOUND</string>
+    <string name="office_id">Office id</string>
+
+    <string-array name="postal_code">
+        <item>select</item>
+        <item>643217</item>
+        <item>621804</item>
+        <item>641014</item>
+        <item>641004</item>
+        <item>608602</item>
+        <item>638002</item>
+    </string-array>
+</resources>
