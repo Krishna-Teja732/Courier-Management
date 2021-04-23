@@ -26,11 +26,15 @@ public class Logs extends AppCompatActivity {
         setContentView(R.layout.logs);
         TextView text = findViewById(R.id.office_id);
         TextView noData = findViewById(R.id.no_data_found);
-        text.append(officeID);
+        text.append(" "+officeID);
         Button back = findViewById(R.id.logs_back_bt);
         back.setOnClickListener(v-> finish());
         ListView logs = findViewById( R.id.logs_list_view);
         ArrayList<String> values = query.EmpQuery.logs(Logs.this,officeID);
+        for(int i=0;i<values.size();i++){
+            values.set(i,i+1+". "+ values.get(i));
+            System.out.println(values.get(i));
+        }
         if(values.isEmpty()){
             noData.setVisibility(View.VISIBLE);
         }

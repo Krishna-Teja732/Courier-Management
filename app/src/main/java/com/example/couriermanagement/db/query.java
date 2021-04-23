@@ -163,15 +163,13 @@ public class query {
             ArrayList<String> vals = new ArrayList<>();
             String selection = DB.Logs.OFFICE_ID + "=?";
             String[] selectionArgs = {officeid};
-            int num=1;
             Cursor cursor = database.query(DB.Logs.TABLE_NAME,null,selection,selectionArgs,null,null,null);
             while (cursor.moveToNext()){
-                String val = num+".  Courier ID:  " +
+                String val = "  Courier ID:  " +
                         cursor.getString(cursor.getColumnIndex(DB.Logs.COURIER_ID)) +
                         "    Customer ID: " +
                         cursor.getString(cursor.getColumnIndex(DB.Logs.CUSTOMER_ID));
                 vals.add(0, val);
-                num++;
             }
             return vals;
         }
