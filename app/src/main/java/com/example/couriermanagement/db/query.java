@@ -164,12 +164,14 @@ public class query {
             String selection = DB.Logs.OFFICE_ID + "=?";
             String[] selectionArgs = {officeid};
             Cursor cursor = database.query(DB.Logs.TABLE_NAME,null,selection,selectionArgs,null,null,null);
+            int num=1;
             while (cursor.moveToNext()){
-                String val = "  Courier ID:  " +
+                String val =num +".  Courier ID:  " +
                         cursor.getString(cursor.getColumnIndex(DB.Logs.COURIER_ID)) +
                         "    Customer ID: " +
                         cursor.getString(cursor.getColumnIndex(DB.Logs.CUSTOMER_ID));
-                vals.add(0, val);
+                vals.add(val);
+                num++;
             }
             return vals;
         }

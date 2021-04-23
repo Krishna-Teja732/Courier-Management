@@ -31,14 +31,12 @@ public class Logs extends AppCompatActivity {
         back.setOnClickListener(v-> finish());
         ListView logs = findViewById( R.id.logs_list_view);
         ArrayList<String> values = query.EmpQuery.logs(Logs.this,officeID);
-        for(int i=0;i<values.size();i++){
-            values.set(i,i+1+". "+ values.get(i));
-            System.out.println(values.get(i));
-        }
         if(values.isEmpty()){
             noData.setVisibility(View.VISIBLE);
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.log_item_layout,values);
-        logs.setAdapter(adapter);
+        else{
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.log_item_layout,values);
+            logs.setAdapter(adapter);
+        }
     }
 }
