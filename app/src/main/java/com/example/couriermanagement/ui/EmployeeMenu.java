@@ -19,11 +19,8 @@ public class EmployeeMenu extends AppCompatActivity{
         setContentView(R.layout.staff_menu);
         initButtonThread thread = new initButtonThread();
         thread.start();
+        info = getIntent().getStringArrayExtra("details");
         while (thread.isAlive());
-    }
-
-    public static void setInfo(String[] loginInfo) {
-        info = loginInfo;
     }
 
     private class initButtonThread extends Thread{

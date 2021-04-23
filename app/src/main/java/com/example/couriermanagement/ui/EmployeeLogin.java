@@ -35,10 +35,10 @@ public class EmployeeLogin extends AppCompatActivity {
             submit.setOnClickListener(v -> {
                 String[] info = query.EmpQuery.Login(EmployeeLogin.this, username.getText().toString(), password.getText().toString());
                 if (info != null) {
-                    EmployeeMenu.setInfo(info);
                     username.setText("");
                     password.setText("");
                     Intent intent = new Intent(EmployeeLogin.this, EmployeeMenu.class);
+                    intent.putExtra("details",info);
                     startActivity(intent);
                 } else {
                     Toast.makeText(EmployeeLogin.this, "incorret details", Toast.LENGTH_LONG).show();
