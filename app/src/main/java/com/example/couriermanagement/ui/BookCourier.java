@@ -19,15 +19,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 public class BookCourier extends AppCompatActivity{
-    private static int OfficeID,EmpId;
+    private int OfficeID,EmpId;
     private ConstraintLayout layout;
-    public static void setOfficeID(String officeID) {
-        OfficeID = Integer.parseInt(officeID);
-    }
-
-    public static void setEmpId(String empId) {
-        EmpId = Integer.parseInt(empId);
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +28,8 @@ public class BookCourier extends AppCompatActivity{
         setContentView(R.layout.book_courier);
         initThread thread2 = new initThread();
         thread2.start();
+        OfficeID = Integer.parseInt(getIntent().getStringExtra("officeID"));
+        EmpId = Integer.parseInt(getIntent().getStringExtra("empID"));
         AutoCompleteTextView postal_code1 = findViewById(R.id.sender_postal_code);
         AutoCompleteTextView postal_code2 = findViewById(R.id.receiver_postal_code);
         String[] entries = getResources().getStringArray(R.array.postal_code);

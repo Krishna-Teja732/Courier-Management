@@ -11,22 +11,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.couriermanagement.db.query;
 
 public class ChangePassword extends AppCompatActivity {
-    private static String oldPassword;
-    private static String empid;
+    private String oldPassword;
+    private String empID;
 
-    public static void setEmpid(String empid) {
-        ChangePassword.empid = empid;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.change_password);
         initButtonThread thread = new initButtonThread();
+        empID = getIntent().getStringExtra("empID");
+        oldPassword = getIntent().getStringExtra("oldPassword");
         thread.start();
-    }
-    public static void setOldPassword(String oldPassword) {
-        ChangePassword.oldPassword = oldPassword;
     }
 
     private class initButtonThread extends Thread{
@@ -41,7 +37,7 @@ public class ChangePassword extends AppCompatActivity {
             back.setOnClickListener(v-> finish());
             submit.setOnClickListener(v->{
                 if(check()){
-                    query.EmpQuery.changePassword(ChangePassword.this,empid,newp.getText().toString());
+                    query.EmpQuery.changePassword(ChangePassword.this, empID,newp.getText().toString());
                     Toast.makeText(ChangePassword.this,"Password changed successfully",Toast.LENGTH_LONG).show();
                     finish();
                 }
