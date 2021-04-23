@@ -14,11 +14,6 @@ import com.example.couriermanagement.db.query;
 import java.util.ArrayList;
 
 public class Logs extends AppCompatActivity {
-    private static String officeID;
-
-    public static void setOfficeID(String officeID) {
-        Logs.officeID = officeID;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +21,12 @@ public class Logs extends AppCompatActivity {
         setContentView(R.layout.logs);
         TextView text = findViewById(R.id.office_id);
         TextView noData = findViewById(R.id.no_data_found);
-        text.append(" "+officeID);
+        String officeID = getIntent().getStringExtra("officeID");
+        text.append(" "+ officeID);
         Button back = findViewById(R.id.logs_back_bt);
         back.setOnClickListener(v-> finish());
         ListView logs = findViewById( R.id.logs_list_view);
-        ArrayList<String> values = query.EmpQuery.logs(Logs.this,officeID);
+        ArrayList<String> values = query.EmpQuery.logs(Logs.this, officeID);
         if(values.isEmpty()){
             noData.setVisibility(View.VISIBLE);
         }

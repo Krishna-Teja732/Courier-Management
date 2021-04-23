@@ -12,16 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.couriermanagement.db.query;
 
 public class CreateEmp extends AppCompatActivity {
-    private static int office_id;
+    private int office_id;
 
-    public static void setOffice_id(String office_id) {
-        CreateEmp.office_id = Integer.parseInt(office_id);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_emp);
+        office_id = Integer.parseInt(getIntent().getStringExtra("officeID"));
         initButtonThread thread = new initButtonThread();
         thread.start();
     }

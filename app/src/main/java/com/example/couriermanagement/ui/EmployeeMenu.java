@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class EmployeeMenu extends AppCompatActivity{
-    private static String[] info;
+    private String[] info;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,25 +36,25 @@ public class EmployeeMenu extends AppCompatActivity{
             staffID.setText("Staff ID: "+info[0]+"   OfficeID: "+info[1]);
             logout.setOnClickListener(v -> finish());
             book.setOnClickListener(v -> {
-                BookCourier.setEmpId(info[0]);
-                BookCourier.setOfficeID(info[1]);
                 Intent intent = new Intent(EmployeeMenu.this,BookCourier.class);
+                intent.putExtra("empID",info[0]);
+                intent.putExtra("officeID",info[1]);
                 startActivity(intent);
             });
             createEmp.setOnClickListener(v -> {
-                CreateEmp.setOffice_id(info[1]);
                 Intent intent = new Intent(EmployeeMenu.this,CreateEmp.class);
+                intent.putExtra("officeID",info[0]);
                 startActivity(intent);
             });
             chPassword.setOnClickListener(v->{
-                ChangePassword.setOldPassword(info[4]);
-                ChangePassword.setEmpid(info[0]);
                 Intent intent = new Intent(EmployeeMenu.this,ChangePassword.class);
+                intent.putExtra("empID",info[0]);
+                intent.putExtra("oldPassword",info[4]);
                 startActivity(intent);
             });
             log_bt.setOnClickListener(v->{
-                Logs.setOfficeID(info[1]);
                 Intent intent = new Intent(EmployeeMenu.this, Logs.class);
+                intent.putExtra("officeID",info[1]);
                 startActivity(intent);
             });
         }
